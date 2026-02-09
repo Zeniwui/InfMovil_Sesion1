@@ -44,7 +44,15 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG1, "Bundle no es nulo")
         }
 
-        binding.button.setOnClickListener {  }
+        binding.button.setOnClickListener {
+            etiqueta.text = "Etiqueta cambiada"
+        }
+
+        with(binding) {
+            button.setOnClickListener {
+                textView.text = "Etiqueta cambiada"
+            }
+        }
 
         boton.setOnClickListener {
             etiqueta.text = "Etiqueta cambiada"
