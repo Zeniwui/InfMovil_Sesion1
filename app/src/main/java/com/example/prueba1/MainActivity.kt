@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         Log.d(TAG1, "Estoy en onCreate()")
+        if (savedInstanceState == null) {
+            Log.d(TAG1, "Bundle es nulo")
+        } else {
+            Log.d(TAG1, "Bundle no es nulo")
+        }
         boton.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
@@ -65,6 +70,11 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d(TAG1, "Estoy en onSaveInstanceState()")
+        if (outState == null) {
+            Log.d(TAG1, "Bundle es nulo")
+        } else {
+            Log.d(TAG1, "Bundle no es nulo")
+        }
     }
 
     override fun onRestart() {
